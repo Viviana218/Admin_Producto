@@ -14,7 +14,7 @@ const TodosProductos = props => {
             .catch(err => console.log(err));
     }, []);
 
-    const borrarProducto = id => {
+    const borrarProducto = (id) => {
         axios.delete("http://localhost:8000/api/productos/"+id)
             .then(res => {
                 //Actualizamos lista a través de filter
