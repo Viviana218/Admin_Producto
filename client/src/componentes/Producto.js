@@ -16,7 +16,7 @@ const Producto = () => {
             .catch(err => console.log(err));
     }, [id]);
 
-    const borrarProducto = id => {
+    const borrarProducto = (id) => {
         axios.delete("http://localhost:8000/api/productos/"+id)
             .then(res => 
                 history.push("/")
@@ -33,7 +33,7 @@ const Producto = () => {
                     {producto.descripcion}
                 </p>
                 <Link to="/" className="btn btn-primary">Regresar</Link>
-                <Link to="/" className="btn btn-danger" onClick={() => borrarProducto(id)}>Eliminar</Link>
+                <button className="btn btn-danger" onClick={() => borrarProducto(id)}>Eliminar</button>
             </div>
         </div>
     )
